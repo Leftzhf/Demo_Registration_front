@@ -24,7 +24,7 @@
         </template>
       </el-table-column>
       <el-table-column label="编码" width="220">
-        <template slot-scope="{row}">
+        <template v-slot="{row}">
           {{ row.dictCode }}
         </template>
       </el-table-column>
@@ -99,12 +99,12 @@ export default {
       window.location.href = 'http://localhost:8202/admin/cmn/dict/exportData'
     },
     getDictionaryList(id) {
-      dictionaryApi.getDictionary(id).then(response => {
+      dictionaryApi.getDictionaryList(id).then(response => {
         this.dictionary = response.data
       })
     },
     getChildrens(tree, treeNode, resolve) {
-      dictionaryApi.getDictionary(tree.id).then(response => {
+      dictionaryApi.getDictionaryList(tree.id).then(response => {
         resolve(response.data)
       })
     }

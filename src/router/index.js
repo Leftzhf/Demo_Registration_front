@@ -80,6 +80,26 @@ export const constantRoutes = [
         component: () => import('@/views/hospital-settings/add'),
         meta: { title: '编辑', noCache: true },
         hidden: true
+      },
+      {
+        path: 'hospital/list',
+        name: '医院列表',
+        component: () => import('@/views/hospital/list'),
+        meta: { title: '医院列表', icon: 'table' }
+      },
+      {
+        path: 'hospital/list/show/:id',
+        name: '医院详细信息',
+        component: () => import('@/views/hospital/info'),
+        meta: { title: '医院详细信息', noCache: true },
+        hidden: true
+      },
+      {
+        path: 'hospital/schedule/:hosCode',
+        name: '排班',
+        component: () => import('@/views/hospital/schedule'),
+        meta: { title: '排班', noCache: true },
+        hidden: true
       }
     ]
   },
